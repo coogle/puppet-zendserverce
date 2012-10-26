@@ -1,8 +1,8 @@
-define zendserverce::vhost(
+define zendserverce::vhost-ssl(
   $server_name='www.example.com',
   $docroot_all='/var/www',
-  $template='zendserverce/vhost.conf.erb',
-  $port='80',
+  $template='zendserverce/vhost-ssl.conf.erb',
+  $port='443',
   $serveraliases='',
 
 ) {
@@ -11,7 +11,7 @@ define zendserverce::vhost(
 
   $docroot = "${docroot_all}/${server_name}"
 
-  file {"/usr/local/zend/etc/sites.d/vhost_${server_name}.conf":
+  file {"/usr/local/zend/etc/sites.d/vhost_${server_name}-ssl.conf":
     content => template($template),
     owner => 'root',
     group => 'zend',
