@@ -3,6 +3,8 @@ class zendserverce::install($php_version = "5.3") {
     # https://github.com/puppetlabs/puppetlabs-stdlib
   file_line { 'zendserverce::debian_package':
       path => '/etc/apt/sources.list',
+      
+      /* This is a special repository specifically for Ubuntu 12.04 which we also need for 12.10 due to a ZSCE bug */
       line => 'deb http://repos.zend.com/zend-server/5.6.0_ubuntu1204/deb server non-free'
   }
 

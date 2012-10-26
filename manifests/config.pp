@@ -4,6 +4,7 @@ class zendserverce::config {
     mode => 644,
     owner => root,
     group => zend,
+    require => [ Class['zendserverce::install'] ],
     notify => [ Class['zendserverce::service'] ]
   }
 }
