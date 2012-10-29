@@ -7,8 +7,6 @@ define zendserverce::vhost-ssl(
 
 ) {
 
-  include zendserverce
-
   $docroot = "${docroot_all}/${server_name}"
 
   file {"/usr/local/zend/etc/sites.d/vhost_${server_name}-ssl.conf":
