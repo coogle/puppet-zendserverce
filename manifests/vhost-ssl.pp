@@ -9,7 +9,7 @@ define zendserverce::vhost-ssl(
 
   $docroot = "${docroot_all}/${server_name}"
 
-  file {"/usr/local/zend/etc/sites.d/vhost_${server_name}-ssl.conf":
+  file {"/usr/local/zend/etc/sites.d/vhost_${name}-ssl.conf":
     content => template($template),
     owner => 'root',
     group => 'zend',
