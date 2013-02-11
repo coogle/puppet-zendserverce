@@ -23,5 +23,10 @@ class zendserverce::install($php_version = "5.3") {
   package { "zend-server-ce-php-$php_version":
        ensure => "latest",
        require  => Exec["zendserverce::apt_update"]
-    }
+  }
+  
+  package { "php-5.3-extra-extensions-zend-server":
+     ensure => "latest",
+     require => [ Exec['zendserverce::apt_update'], Package["zend-server-ce-php-$php_version"] ] 
+  }
 }

@@ -25,4 +25,10 @@ class zendserverce::config {
     target => '/usr/local/zend/bin/php-config',
     require => [ Class['zendserverce::install'] ]
   }
+  
+  file { "/usr/local/bin/pecl":
+    ensure => "link",
+    target => "/usr/local/zend/bin/pecl",
+    require => [ Class['zendserverce::install'] ]
+  }
 }

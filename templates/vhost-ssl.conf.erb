@@ -9,12 +9,12 @@
 	<%= "  ServerAlias #{serveraliases}" -%>
 	<% end -%>
 
-	DocumentRoot <%= docroot %>/webroot
+	DocumentRoot <%= docroot %>/app/webroot
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
-	<Directory <%= docroot %>/webroot>
+	<Directory <%= docroot %>/app/webroot>
 		DirectoryIndex index.php
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride All
