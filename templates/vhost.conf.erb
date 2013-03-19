@@ -5,6 +5,7 @@
 <% elsif serveraliases != '' -%>
 <%= "  ServerAlias #{serveraliases}" -%>
 <% end -%>
+  Alias /blog /var/www/blog
   DocumentRoot <%= docroot %>/app/webroot
   <Directory "<%= docroot %>/app/webroot" >
     Options Indexes FollowSymLinks MultiViews
