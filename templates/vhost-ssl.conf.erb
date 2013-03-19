@@ -40,8 +40,8 @@
 	#   /usr/share/doc/apache2.2-common/README.Debian.gz for more info.
 	#   If both key and certificate are stored in the same file, only the
 	#   SSLCertificateFile directive is needed.
-	SSLCertificateFile    /etc/ssl/certs/ssl-cert-snakeoil.pem
-	SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+	SSLCertificateFile    /etc/ssl/certs/application.crt
+	SSLCertificateKeyFile /etc/ssl/private/application.key
 
 	#   Server Certificate Chain:
 	#   Point SSLCertificateChainFile at a file containing the
@@ -50,7 +50,7 @@
 	#   the referenced file can be the same as SSLCertificateFile
 	#   when the CA certificates are directly appended to the server
 	#   certificate for convinience.
-	#SSLCertificateChainFile /etc/apache2/ssl.crt/server-ca.crt
+	#SSLCertificateChainFile /etc/apache2/ssl.crt/application-ca.crt
 
 	#   Certificate Authority (CA):
 	#   Set the CA certificate verification path where to find CA
