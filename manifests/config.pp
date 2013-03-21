@@ -26,6 +26,24 @@ class zendserverce::config {
     notify => [ Class['zendserverce::service'] ]
   }
   
+  file { "/usr/local/zend/etc/conf.d/mongo.ini" :
+    source => "puppet:///zendserverce/usr/local/zend/etc/conf.d/mongo.ini",
+    mode => 644,
+    owner => root,
+    group => zend,
+    require => [ Class['zendserverce::install'] ],
+    notify => [ Class['zendserverce::service'] ]
+  }
+  
+  file { "/usr/local/zend/etc/conf.d/curl.ini" :
+    source => "puppet:///zendserverce/usr/local/zend/etc/conf.d/curl.ini",
+    mode => 644,
+    owner => root,
+    group => zend,
+    require => [ Class['zendserverce::install'] ],
+    notify => [ Class['zendserverce::service'] ]
+  }
+  
   file { "/usr/local/zend/gui/lighttpd/etc/conf.d/jobqueue.ini" :
     source => "puppet:///zendserverce/usr/local/zend/gui/lighttpd/etc/conf.d",
     mode => 644,
@@ -34,6 +52,7 @@ class zendserverce::config {
     require => [ Class['zendserverce::install'] ],
     notify => [ Class['zendserverce::service'] ]
   }
+  
   file { "/usr/local/bin/php":
     ensure => 'link',
     target => '/usr/local/zend/bin/php',
