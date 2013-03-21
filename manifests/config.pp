@@ -45,7 +45,7 @@ class zendserverce::config {
   }
   
   file { "/usr/local/zend/gui/lighttpd/etc/conf.d/jobqueue.ini" :
-    source => "puppet:///zendserverce/gui/lighttpd/etc/conf.d/jobqueue.ini",
+    source => "puppet:///zendserverce/usr/local/zend/gui/lighttpd/etc/conf.d",
     mode => 644,
     owner => root,
     group => zend,
